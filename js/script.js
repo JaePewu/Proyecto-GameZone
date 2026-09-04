@@ -14,6 +14,9 @@ const errorConfirmarContrasena = document.getElementById(
   "errorConfirmarContrasena",
 );
 
+const telefono = document.getElementById("telefono");
+const errorTelefono = document.getElementById("errorTelefono");
+
 //Validación
 formularioRegistro.addEventListener("submit", function (event) {
   event.preventDefault();
@@ -23,6 +26,7 @@ formularioRegistro.addEventListener("submit", function (event) {
   const valorCorreo = correo.value.trim();
   const valorContrasena = contrasena.value;
   const valorConfirmarContrasena = confirmarContrasena.value;
+  const valorTelefono = telefono.value.trim();
 
   const soloLetras = /^[A-Za-zÁÉÍÓÚáéíóúÑñÜü\s]+$/;
   const formatoCorreo = /^[A-Za-z0-9._%+-]+@duoc\.cl$/i;
@@ -30,6 +34,7 @@ formularioRegistro.addEventListener("submit", function (event) {
   const tieneMinuscula = /[a-z]/;
   const tieneNumero = /[0-9]/;
   const tieneEspecial = /[@#$%!]/;
+  const formatoTelefono = /^[0-9]{9}$/;
 
   // Validación nombre completo
   if (valorNombre === "") {
@@ -83,5 +88,14 @@ formularioRegistro.addEventListener("submit", function (event) {
     errorConfirmarContrasena.textContent = "Las contraseñas no coinciden.";
   } else {
     errorConfirmarContrasena.textContent = "";
+  }
+
+  //Validación de n° teléfono
+  if (valorTelefono === "") {
+    errorTelefono.textContent = "";
+  } else if (!formatoTelefono.test(valorTelefono)) {
+    errorTelefono.textContent = "El teléfono debe contener 9 números.";
+  } else {
+    errorTelefono.textContent = "";
   }
 });
