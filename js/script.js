@@ -17,6 +17,9 @@ const errorConfirmarContrasena = document.getElementById(
 const telefono = document.getElementById("telefono");
 const errorTelefono = document.getElementById("errorTelefono");
 
+const generos = document.querySelectorAll(".genero");
+const errorGeneros = document.getElementById("errorGeneros");
+
 //Validación
 formularioRegistro.addEventListener("submit", function (event) {
   event.preventDefault();
@@ -55,6 +58,8 @@ formularioRegistro.addEventListener("submit", function (event) {
     errorCorreo.textContent = "No puedes superar los 60 caracteres.";
   } else if (!formatoCorreo.test(valorCorreo)) {
     errorCorreo.textContent = "Ingresa un correo válido.";
+  } else if (localStorage.getItem("usuario_" + valorCorreo) !== null) {
+    errorCorreo.textContent = "Este correo electrónico ya está registrado.";
   } else {
     errorCorreo.textContent = "";
   }
@@ -97,5 +102,20 @@ formularioRegistro.addEventListener("submit", function (event) {
     errorTelefono.textContent = "El teléfono debe contener 9 números.";
   } else {
     errorTelefono.textContent = "";
+  }
+
+  // Validación géneros
+  let generoSeleccionado = false;
+
+  generos.forEach(function (genero) {
+    if (genero.checked) {
+      generoSeleccionado = true;
+    }
+  });
+
+  if (generoSeleccionado === false) {
+    errorGeneros.textContent = "Debes seleccionar al menos un género favorito.";
+  } else {
+    errorGeneros.textContent = "";
   }
 });
