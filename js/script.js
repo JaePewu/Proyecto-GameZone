@@ -1,4 +1,4 @@
-//Elemtos de formulario
+//Elementos de formulario
 const formularioRegistro = document.getElementById("formularioRegistro");
 const nombre = document.getElementById("nombre");
 const errorNombre = document.getElementById("errorNombre");
@@ -9,6 +9,11 @@ const errorCorreo = document.getElementById("errorCorreo");
 const contrasena = document.getElementById("contrasena");
 const errorContrasena = document.getElementById("errorContrasena");
 
+const confirmarContrasena = document.getElementById("confirmarContrasena");
+const errorConfirmarContrasena = document.getElementById(
+  "errorConfirmarContrasena",
+);
+
 //Validación
 formularioRegistro.addEventListener("submit", function (event) {
   event.preventDefault();
@@ -17,6 +22,7 @@ formularioRegistro.addEventListener("submit", function (event) {
   const valorNombre = nombre.value.trim();
   const valorCorreo = correo.value.trim();
   const valorContrasena = contrasena.value;
+  const valorConfirmarContrasena = confirmarContrasena.value;
 
   const soloLetras = /^[A-Za-zÁÉÍÓÚáéíóúÑñÜü\s]+$/;
   const formatoCorreo = /^[A-Za-z0-9._%+-]+@duoc\.cl$/i;
@@ -68,5 +74,14 @@ formularioRegistro.addEventListener("submit", function (event) {
       "La contraseña debe incluir un carácter especial (@, #, $, % o !).";
   } else {
     errorContrasena.textContent = "";
+  }
+
+  // Validación  para confirmar contraseña
+  if (valorConfirmarContrasena === "") {
+    errorConfirmarContrasena.textContent = "Debes confirmar la contraseña.";
+  } else if (valorConfirmarContrasena !== valorContrasena) {
+    errorConfirmarContrasena.textContent = "Las contraseñas no coinciden.";
+  } else {
+    errorConfirmarContrasena.textContent = "";
   }
 });
