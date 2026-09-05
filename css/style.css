@@ -129,6 +129,7 @@ body {
 }
 
 /* Tarjetas de caracteristicas */
+
 .tarjeta-caract {
   transition: 0.3s;
 }
@@ -140,16 +141,16 @@ body {
 
 /* REGISTRO */
 
-.registro-principal {
+.formulario-principal {
   background-color: #0f1720;
   padding: 60px 0;
 }
 
-.seccion-registro {
+.seccion-formulario {
   width: 100%;
 }
 
-.contenedor-registro {
+.contenedor-formulario {
   max-width: 600px;
   margin: 0 auto;
   background-color: #181818;
@@ -158,29 +159,29 @@ body {
   border: 1px solid #2f2f2f;
 }
 
-.contenedor-registro h1 {
+.contenedor-formulario h1 {
   color: #ffffff;
   text-align: center;
   margin-bottom: 10px;
 }
 
-.texto-registro {
+.texto-formulario {
   color: #bfc5cc;
   text-align: center;
   margin-bottom: 30px;
 }
 
-.contenedor-registro .form-label {
+.contenedor-formulario .form-label {
   color: #ffffff;
   font-weight: 500;
 }
 
-.contenedor-registro .form-control {
+.contenedor-formulario .form-control {
   background-color: #ffffff;
   border: 1px solid #ced4da;
 }
 
-.contenedor-registro .form-control:focus {
+.contenedor-formulario .form-control:focus {
   border-color: #0ea5e9;
   box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.2);
 }
@@ -207,23 +208,24 @@ body {
   margin-bottom: 0;
 }
 
-.enlace-login {
+.enlace-formulario {
   color: #bfc5cc;
   text-align: center;
   margin-top: 20px;
   margin-bottom: 0;
 }
 
-.enlace-login a {
+.enlace-formulario a {
   color: #38bdf8;
   text-decoration: none;
 }
 
-.enlace-login a:hover {
+.enlace-formulario a:hover {
   text-decoration: underline;
 }
 
 /* FOOTER*/
+
 .footer-gamezone {
   background-color: #111111;
   color: #ffffff;
@@ -233,6 +235,7 @@ body {
 }
 
 /* Para pantalla de tablet y celular */
+
 @media (max-width: 991px) {
   .navbar-toggler {
     justify-self: end;
@@ -256,12 +259,13 @@ body {
 }
 
 /* Para Celular*/
+
 @media (max-width: 576px) {
-  .registro-principal {
+  .formulario-principal {
     padding: 30px 12px;
   }
 
-  .contenedor-registro {
+  .contenedor-formulario {
     padding: 25px 20px;
   }
 
