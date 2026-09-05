@@ -32,7 +32,6 @@ body {
 }
 
 /* Logo */
-
 .logo-letras {
   width: 150px;
   height: auto;
@@ -53,7 +52,6 @@ body {
 }
 
 /* SECCIÓN PRINCIPAL */
-
 .seccion-principal {
   background: linear-gradient(135deg, #111111, #18212f);
   color: #ffffff;
@@ -74,7 +72,6 @@ body {
 }
 
 /* Botones principales */
-
 .botones-principales {
   display: flex;
   gap: 12px;
@@ -93,7 +90,6 @@ body {
 }
 
 /* IMAGEN PRINCIPAL */
-
 .imagen-principal {
   width: 100%;
   max-width: 380px;
@@ -101,7 +97,6 @@ body {
 }
 
 /* CARACTERISTICAS  */
-
 .caracteristicas-gamezone {
   padding: 60px 0;
   background-color: #f5f5f5;
@@ -129,7 +124,6 @@ body {
 }
 
 /* Tarjetas de caracteristicas */
-
 .tarjeta-caract {
   transition: 0.3s;
 }
@@ -140,10 +134,10 @@ body {
 }
 
 /* REGISTRO */
-
 .formulario-principal {
   background-color: #0f1720;
   padding: 60px 0;
+  flex: 1;
 }
 
 .seccion-formulario {

@@ -41,9 +41,9 @@ formularioRegistro.addEventListener("submit", function (event) {
 
   // Validación nombre completo
   if (valorNombre === "") {
-    errorNombre.textContent = "El nombre completo es obligatorio!!";
+    errorNombre.textContent = "El nombre completo es obligatorio.";
   } else if (!soloLetras.test(valorNombre)) {
-    errorNombre.textContent = "Soló puede contener letras y espacios!!";
+    errorNombre.textContent = "Soló puede contener letras y espacios.";
   } else if (valorNombre.length > 100) {
     errorNombre.textContent =
       "El nombre no puede superar los 100 caracteres!!!";
