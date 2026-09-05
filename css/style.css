@@ -32,11 +32,6 @@ body {
 }
 
 /* Logo */
-.logo-icono {
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
-}
 
 .logo-letras {
   width: 150px;
@@ -245,11 +240,6 @@ body {
     padding: 4px 8px;
   }
 
-  .logo-icono {
-    width: 32px;
-    height: 32px;
-  }
-
   .logo-letras {
     width: 115px;
   }
@@ -263,18 +253,19 @@ body {
   .navbar-derecha .navbar-nav {
     text-align: center;
   }
-  /* Para Celular*/
-  @media (max-width: 576px) {
-    .registro-principal {
-      padding: 30px 12px;
-    }
+}
 
-    .contenedor-registro {
-      padding: 25px 20px;
-    }
+/* Para Celular*/
+@media (max-width: 576px) {
+  .registro-principal {
+    padding: 30px 12px;
+  }
 
-    .generos-registro {
-      grid-template-columns: 1fr;
-    }
+  .contenedor-registro {
+    padding: 25px 20px;
+  }
+
+  .generos-registro {
+    grid-template-columns: 1fr;
   }
 }

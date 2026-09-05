@@ -26,7 +26,7 @@ formularioRegistro.addEventListener("submit", function (event) {
 
   //Valores ingresados
   const valorNombre = nombre.value.trim();
-  const valorCorreo = correo.value.trim();
+  const valorCorreo = correo.value.trim().toLowerCase();
   const valorContrasena = contrasena.value;
   const valorConfirmarContrasena = confirmarContrasena.value;
   const valorTelefono = telefono.value.trim();
@@ -117,5 +117,40 @@ formularioRegistro.addEventListener("submit", function (event) {
     errorGeneros.textContent = "Debes seleccionar al menos un género favorito.";
   } else {
     errorGeneros.textContent = "";
+  }
+
+  //*******************************
+  // Comprobación de la validaciónes
+  if (
+    errorNombre.textContent === "" &&
+    errorCorreo.textContent === "" &&
+    errorContrasena.textContent === "" &&
+    errorConfirmarContrasena.textContent === "" &&
+    errorTelefono.textContent === "" &&
+    errorGeneros.textContent === ""
+  ) {
+    // Guardar géneros seleccionados
+    const generosSeleccionados = [];
+
+    generos.forEach(function (genero) {
+      if (genero.checked) {
+        generosSeleccionados.push(genero.value);
+      }
+    });
+
+    // Crear usuario
+    const usuario = {
+      nombre: valorNombre,
+      correo: valorCorreo,
+      contrasena: valorContrasena,
+      telefono: valorTelefono,
+      generos: generosSeleccionados,
+    };
+
+    // Guardar usuario
+    localStorage.setItem("usuario_" + valorCorreo, JSON.stringify(usuario));
+
+    // Mensaje de registro exitoso
+    alert("Usuario registrado correctamente.");
   }
 });
